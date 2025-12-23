@@ -1,16 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <numeric>
-#include <algorithm>
-
+#include <bits/stdc++.h>
+#define int long long 
 using namespace std;
-
-void solve() {
-    
-}
-
-int main() {
+signed main() {
     int t;
     cin >> t;
     while (t--) {
@@ -20,19 +11,19 @@ int main() {
         for (int i = 0; i < n; ++i) {
         cin >> a[i];
         }
-        long long total = 0;
+        int total = 0;
         for (int i = 0; i < n - 1; ++i) {
             total += abs(a[i] - a[i+1]);
         }
-        long long m = 0;
-        long long rf = abs(a[0] - a[1]);
+        int m = 0;
+        int rf = abs(a[0] - a[1]);
         m = max(m, rf);
-        long long rl = abs(a[n-2] - a[n-1]);
+        int rl = abs(a[n-2] - a[n-1]);
         m = max(m, rl);
         for (int i = 1; i < n - 1; ++i) {
-            long long old = abs(a[i-1] - a[i]) + abs(a[i] - a[i+1]);
-            long long neww = abs(a[i-1] - a[i+1]);
-            long long c = old - neww;
+            int old = abs(a[i-1] - a[i]) + abs(a[i] - a[i+1]);
+            int neww = abs(a[i-1] - a[i+1]);
+            int c = old - neww;
             m = max(m, c);
         }
         cout << total - m << endl;
